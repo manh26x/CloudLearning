@@ -1,0 +1,17 @@
+server:
+  port:  7744
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: hi
+          group: upper
+          consumer:
+            max-attempts: 1
+        input:
+          destination: hello
+          group: mike
+          consumer:
+            max-attempts: 1
+            
